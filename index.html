@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - Ultimate Edition</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>🐍 Ultimate Snake Game</h1>
+        
+        <div class="game-info">
+            <div class="score-board">
+                <div class="score-item">
+                    <span class="label">Score:</span>
+                    <span id="score" class="value">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">High Score:</span>
+                    <span id="high-score" class="value">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Level:</span>
+                    <span id="level" class="value">1</span>
+                </div>
+            </div>
+            
+            <div class="difficulty-selector">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                    <option value="insane">Insane</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            
+            <div class="game-over-overlay" id="gameOverOverlay">
+                <div class="game-over-content">
+                    <h2>💀 Game Over!</h2>
+                    <div class="final-stats">
+                        <p>Final Score: <span id="finalScore">0</span></p>
+                        <p>Level Reached: <span id="finalLevel">1</span></p>
+                        <p id="newHighScore" class="new-high-score">🎉 New High Score!</p>
+                    </div>
+                    <button id="playAgainBtn" class="game-btn primary">🎮 Play Again</button>
+                </div>
+            </div>
+
+            <div class="pause-overlay" id="pauseOverlay">
+                <div class="pause-content">
+                    <h2>⏸️ Game Paused</h2>
+                    <p>Press SPACE to resume</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-section">
+            <div class="game-controls">
+                <button id="startBtn" class="game-btn primary">🚀 Start Game</button>
+                <button id="pauseBtn" class="game-btn secondary">⏸️ Pause</button>
+                <button id="restartBtn" class="game-btn secondary">🔄 Restart</button>
+            </div>
+            
+            <div class="instructions">
+                <h3>🎮 How to Play</h3>
+                <div class="instruction-grid">
+                    <div class="instruction-item">
+                        <span class="key">↑ ↓ ← →</span>
+                        <span class="description">Move Snake</span>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="key">SPACE</span>
+                        <span class="description">Pause/Resume</span>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="key">R</span>
+                        <span class="description">Restart Game</span>
+                    </div>
+                </div>
+                <p class="game-tip">💡 Tip: Avoid red barriers! Collect bonus diamonds and stars for extra points!</p>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <h3>📊 Game Statistics</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-label">Food Eaten:</span>
+                    <span id="foodEaten" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Time Played:</span>
+                    <span id="timePlayed" class="stat-value">00:00</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Games Played:</span>
+                    <span id="gamesPlayed" class="stat-value">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
