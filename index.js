@@ -5,7 +5,7 @@ class UltimateSnakeGame {
             document.addEventListener('DOMContentLoaded', () => this.initializeGame());
         } else {
             this.initializeGame();
-        }
+        } 
     }
     
     initializeGame() {
